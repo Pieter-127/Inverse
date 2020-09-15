@@ -1,6 +1,7 @@
 package com.pieterventer.inverse
 
 import android.app.Application
+import androidx.appcompat.app.AppCompatDelegate
 import com.pieterventer.inverse.di.repositoryModule
 import com.pieterventer.inverse.di.viewModelModule
 import org.koin.android.ext.koin.androidContext
@@ -19,5 +20,7 @@ class InverseApplication : Application() {
             androidContext(this@InverseApplication)
             modules(listOf(viewModelModule, repositoryModule))
         }
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_AUTO_BATTERY)
     }
 }
